@@ -13,7 +13,8 @@ class Session{
 
  public static function get($key)//get gia tri
  {
-    if (isset($_SESSION[$key])) {
+    if (isset($_SESSION[$key])) 
+    {
      return $_SESSION[$key];
     } else {
      return false;
@@ -22,10 +23,10 @@ class Session{
 
  public static function checkSession()
  {
-    self::init();
+    self::init();// start session
     if (self::get("adminlogin")== false) {
      self::destroy();
-     header("Location:login.php");
+     header("Location:login.php");//quay lại trang login
     }
  }
 //check phiên làm việc có tồn tại hay không

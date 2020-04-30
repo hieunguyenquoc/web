@@ -1,4 +1,4 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php include '../classes/category.php';  ?>
 <?php include '../classes/cart.php';  ?>
@@ -18,7 +18,7 @@
  ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Tất cả sản phẩm</h2>
+        <h2>Quản lý kho</h2>
         <div class="block">  
             <table class="data display datatable" id="example">
 			<thead>
@@ -26,23 +26,24 @@
 					<th>ID</th>
 					<th>Code</th>
 					<th>Tên sản phẩm</th>
-					<th>Nhập hàng</th>
-					<th>Số lượng nhập</th>
+				
+					<th>Số lượng ban đầu</th>
 					<th>Đã bán</th>
-					<th>Tồn</th>
-					<th>Giá</th>
-					<th>Image</th>
-					<th>Danh mục</th>
-					<th>Thương hiệu</th>
+				
+					<th>Số lượng trước nhập</th>
+					<th>Số lượng thêm</th>
+					<th>Số lượng sau nhập</th>
 					
-					<th>Loại</th>
-					<th>Xử lý</th>
+					<th>Ngày nhập</th>
+
+					
+					
 				</tr>
 			</thead>
 			<tbody>
 				<?php 
 				
-				$pdlist = $pd->show_product();
+				$pdlist = $pd->show_product_warehouse();
 				$i = 0;
 				
 				
@@ -57,7 +58,7 @@
 					<td><?php echo $i ?></td>
 					<td><?php echo $result['product_code'] ?></td>
 					<td><?php echo $result['productName'] ?></td>
-					<td><a href="productmorequantity.php?productid=<?php echo $result['productId'] ?>">Nhập hàng</a></td>
+					
 					<td>
 						<?php echo $result['productQuantity'] ?>
 
@@ -66,25 +67,25 @@
 						<?php echo $result['product_soldout'] ?>
 
 					</td>
+					
+					<td>
+						<?php echo $result['product_remain'] - $result['sl_nhap'] ?>
+
+					</td>
+					<td>
+						<?php echo $result['sl_nhap'] ?>
+
+					</td>
 					<td>
 						<?php echo $result['product_remain'] ?>
 
 					</td>
-					<td><?php echo $result['price'] ?></td>
-					<td><img src="uploads/<?php echo $result['image'] ?>" width="80"></td>
-					<td><?php echo $result['catName'] ?></td>
-					<td><?php echo $result['brandName'] ?></td>
-					
-					<td><?php 
-						if($result['type']==0){
-							echo 'Nổi bật';
-						}else{
-							echo 'Không Nổi Bật';
-						}
+					<td>
+						<?php echo $result['sl_ngaynhap'] ?>
 
-					?></td>
+					</td>
 					
-					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Edit</a> || <a href="?productid=<?php echo $result['productId'] ?>">Delete</a></td>
+					
 				</tr>
 				<?php
 							

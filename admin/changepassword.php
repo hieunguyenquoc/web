@@ -1,25 +1,37 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+<?php include '../classes/password.php'?>
+<?php if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
+{
+$pass=new pass();
+$newpass=$pass->updatePass($_POST);
+}?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Change Password</h2>
+        <h2>Thay đổi mật khẩu</h2>
+        <?php
+        if(isset($newpass))
+        {
+            echo $newpass;
+        } 
+        ?>
         <div class="block">               
-         <form>
+         <form action="changepassword.php" method="post">
             <table class="form">					
                 <tr>
                     <td>
-                        <label>Old Password</label>
+                        <label>Mật khẩu cũ</label>
                     </td>
                     <td>
-                        <input type="password" placeholder="Enter Old Password..."  name="title" class="medium" />
+                        <input type="password" placeholder="Nhập mật khẩu cũ..."  name="oldpass" class="medium" />
                     </td>
                 </tr>
 				 <tr>
                     <td>
-                        <label>New Password</label>
+                        <label>Mật khẩu mới</label>
                     </td>
                     <td>
-                        <input type="password" placeholder="Enter New Password..." name="slogan" class="medium" />
+                        <input type="password" placeholder="Nhập mật khẩu mới..." name="newpass" class="medium" />
                     </td>
                 </tr>
 				 

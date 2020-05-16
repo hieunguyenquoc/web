@@ -32,6 +32,15 @@
 			$productName = $result['productName'];
 			$price = $result['price'];
 			$image = $result['image'];
+            $check_cart="SELECT * FROM tbl_cart WHERE productId = '$id' AND sId='$sId' ";
+            $check=$this->db->select($check_cart);
+            if($check)
+            {
+                $msg="Sản phẩm đã được thêm vào giỏ hàng";
+                return $msg;
+                
+            }
+            else{
 			if($result['product_remain']>$quantity){
 			
 				$query_insert = "INSERT INTO tbl_cart(productId,productName,quantity,sId,price,image) VALUES('$id','$productName','$quantity','$sId','$price','$image' ) ";
@@ -45,7 +54,7 @@
 				$msg = "<span class='erorr'> Số lượng ".$quantity." bạn đặt quá số lượng chúng tôi chỉ còn ".$result['product_remain']." cái</span> ";
 				return $msg;
 			}
-			
+            }
 
 		}
 		public function get_product_cart()
@@ -119,6 +128,12 @@
 		public function del_compare($customer_id){
 			$sId = session_id();
 			$query = "DELETE FROM tbl_compare WHERE customer_id = '$customer_id'";
+			$result = $this->db->delete($query);
+			return $result;
+		}
+        public function del_wishlist($customer_id){
+			$sId = session_id();
+			$query = "DELETE FROM tbl_wishlist WHERE customer_id = '$customer_id'";
 			$result = $this->db->delete($query);
 			return $result;
 		}

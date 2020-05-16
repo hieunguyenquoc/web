@@ -2,6 +2,7 @@
 <?php include 'inc/sidebar.php';?>
 <?php include '../classes/brand.php';  ?>
 <?php
+
     // gọi class category
     $brand = new brand();     
     if(!isset($_GET['delid']) || $_GET['delid'] == NULL){
@@ -27,6 +28,7 @@
 						<tr>
 							<th>No.</th>
 							<th>Thương hiệu</th>
+							<th>Loại thương hiệu</th>
 							<th>Xử lý</th>
 						</tr>
 					</thead>
@@ -42,6 +44,14 @@
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
 							<td><?php echo $result['brandName']; ?></td>
+							<td><?php 
+						if($result['topBrand']==0){
+							echo 'Thương hiệu bình thường';
+						}else{
+							echo 'Thương hiệu hàng đầu';
+						}
+
+					?></td>
 							<td><a href="brandedit.php?brandid=<?php echo $result['brandId']; ?>">Edit</a> || <a onclick = "return confirm('Are you want to delete???')" href="?delid=<?php echo $result['brandId'] ?>">Delete</a></td>
 						</tr>
 						<?php 

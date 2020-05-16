@@ -165,7 +165,8 @@ input[type="number"] {
   color: #444;
   display: block;
   float: left;
-  font-size: 27px;
+  font-size: 14px;
+  line-height:38px; 
   height: 38px;
   margin-left: 10px;
   text-align: center;
@@ -601,7 +602,7 @@ p.note{
 .grid_1_of_4{
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 1.2% 1% 0;
 	box-shadow: 0px 0px 3px rgb(150, 150, 150);
 }
 .grid_1_of_4:first-child { 
@@ -611,10 +612,12 @@ p.note{
 	width: 20.8%;
 	padding:1.5%;
 	text-align:center;
-	position:relative; 
+	position:relative;
+    min-height: 352.85px;
 }
 .images_1_of_4  img{
 	max-width:100%;
+	max-height:150px;
 }
 .discount{
 	background:url(../images/discount-img.png) no-repeat 0 0;
@@ -1395,7 +1398,7 @@ p.note{
   border-bottom: 1px solid #ddd;
   font-size: 30px;
   margin-bottom: 20px;
-  width: 141px;
+  width: 500px;
 }
 .tblone {
   border: 1px solid #fff;
@@ -1637,7 +1640,7 @@ p.terms {
 		width: 183px;
     }
     .shopping_cart {
-    	width:180px;
+    	width:150px;
     }
     .shopping_cart{
     	margin-left:5px;
@@ -2471,4 +2474,109 @@ p.terms {
 		width:92%;
 		padding:4%;
 	}
+    
+}
+.error
+{
+    color: red;
+}
+.success
+{
+    color: green;
+}
+
+h3.payment
+{
+  text-align: center;
+  font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.wrapper_method
+{
+    text-align: center;
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid #666;
+    padding: 20px;
+    background: cornsilk;
+}
+.wrapper_method a
+{
+    padding: 10px;
+    color: #fff;
+    
+    background: burlywood;
+}
+
+.wrapper_method h3
+{
+   margin-bottom: 20px;
+}
+.box_left {
+    width: 50%;
+    border: 1px solid #666;
+    float: left;
+    padding: 4px;	
+
+	}
+ 	.box_right {
+    width: 47%;
+    border: 1px solid #666;
+    float: right;
+    padding: 4px;
+	}
+	.a_order {
+    background: #653092;
+    color: aliceblue;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: none;
+    cursor: pointer;
+	}
+
+h2.success_order
+{
+   text-align: center;
+    color: green;
+}
+.button_details input[type=submit]
+{
+    float: left;
+    margin: 0px 5px;
+}
+.news {
+	clear: both;
+	padding: 0px;
+	margin-top:10px;
+	margin-left: 20px;
+}
+#newsTitle
+{
+	text-align: center;
+    font-size: 25px;
+    margin: 20px auto
+}
+#newsImg
+{
+	width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+.page
+{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+ }   
+.page a
+{
+  margin:0 5px; 
+    color: black;
+
+}
+.page p
+{
+    color:#4267b2;
+
 }

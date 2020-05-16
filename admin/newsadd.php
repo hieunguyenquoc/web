@@ -52,14 +52,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
                 </tr>
                 
                 <tr>
+                <tr>
                     <td>
                         <label>Loại tin tức</label>
                     </td>
                     <td>
                         <select id="select" name="newsType">
                             <option>Chọn</option>
-                            <option value="1">Hot</option>
-                            <option value="0">Bình thường</option>
+                            <option value="0">Tin thường</option>
+                            <option value="1">Tin mới</option>
+                            <option value="2">Tin hot</option>
                         </select>
                     </td>
                 </tr>

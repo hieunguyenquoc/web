@@ -1,4 +1,5 @@
-	<div class="header_bottom">
+
+<div class="header_bottom">
 		<div class="header_bottom_left">
 			<div class="section group">
 				<div class="listview_1_of_2 images_1_of_2">
@@ -52,10 +53,18 @@
 			<section class="slider">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="images/slide/slide1.png" alt=""/></li>
-						<li><img src="images/slide/slide2.png" alt=""/></li>
-						<li><img src="images/slide/slide3.png" alt=""/></li>
-						<li><img src="images/slide/slide4.jpg" alt=""/></li>
+                        <?php 
+						$get_slider = $product->show_slider();
+						if ($get_slider) {
+							while ($result_slider = $get_slider->fetch_assoc()) {
+								# code...
+							
+						 ?>
+						<li><img src="admin/uploads/<?php echo $result_slider['slider_image'] ?>" alt="<?php echo $result_slider['sliderName'] ?>"/></li>
+						<?php 
+						}
+						}
+						 ?>
 				    </ul>
 				  </div>
 	      </section>

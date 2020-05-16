@@ -25,10 +25,36 @@
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Giỏ hàng của tôi</h4>
 						<ul>
-							<li><a href="contact.html">Đăng nhập</a></li>
-							<li><a href="index.html">Xem giỏ hàng</a></li>
-							<li><a href="#">Sản phẩm yêu thích</a></li>
-							<!-- <li><a href="#">Track My Order</a></li> -->
+						 <?php 
+	  $login_check = Session::get('customer_login');
+	  if($login_check){
+	  	echo '';
+      }
+                            else
+                            {
+                                echo '<li><a href="login.php">Đăng nhập</a></li>';
+                            }
+	   ?>
+							 <?php 
+	  $login_check = Session::get('customer_login');
+	  if($login_check){
+	  	 echo '<li><a href="cart.php">Xem giỏ hàng</a></li>';
+      }
+                            else
+                            {
+                                echo '';
+                            }
+	   ?>
+							 <?php 
+	  $login_check = Session::get('customer_login');
+	  if($login_check){
+	  	 echo '<li><a href="wishlist.php">Sản phẩm yêu thích</a></li>';
+      }
+                            else
+                            {
+                                echo '';
+                            }
+	   ?>
 							<li><a href="faq.html">Giúp đỡ</a></li>
 						</ul>
 				</div>

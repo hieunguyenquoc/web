@@ -77,9 +77,9 @@
 					
 					<td><?php 
 						if($result['type']==0){
-							echo 'Nổi bật';
+							echo 'Không nổi bật';
 						}else{
-							echo 'Không Nổi Bật';
+							echo 'Nổi bật';
 						}
 
 					?></td>

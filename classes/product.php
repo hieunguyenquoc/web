@@ -1,5 +1,4 @@
 <?php
-
 	$filepath = realpath(dirname(__FILE__));
 	include_once ($filepath.'/../lib/database.php');
 	include_once ($filepath.'/../helpers/format.php');
@@ -19,17 +18,17 @@
 			$this->fm = new Format();
 		}
 
-		public function insert_product($date,$files){
+		public function insert_product($data,$files){
 			
-			$productName = mysqli_real_escape_string($this->db->link, $date['productName']);
-			$product_code = mysqli_real_escape_string($this->db->link, $date['product_code']);
+			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
+			$product_code = mysqli_real_escape_string($this->db->link, $data['product_code']);
 
-			$productQuantity = mysqli_real_escape_string($this->db->link, $date['productQuantity']);
-			$category = mysqli_real_escape_string($this->db->link, $date['category']);
-			$brand = mysqli_real_escape_string($this->db->link, $date['brand']);
-			$product_desc = mysqli_real_escape_string($this->db->link, $date['product_desc']);
-			$price = mysqli_real_escape_string($this->db->link, $date['price']);
-			$type = mysqli_real_escape_string($this->db->link, $date['type']);
+			$productQuantity = mysqli_real_escape_string($this->db->link, $data['productQuantity']);
+			$category = mysqli_real_escape_string($this->db->link, $data['category']);
+			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
+			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
+			$price = mysqli_real_escape_string($this->db->link, $data['price']);
+			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			 //mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
 			
 			// kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
@@ -43,7 +42,7 @@
 			$unique_image = substr(md5(time()), 0,10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 
-			if($product_code ='' || $productName == "" || $productQuantity == "" || $category == "" || $brand == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == ""){
+			if($product_code =="" || $productName == "" || $productQuantity == "" || $category == "" || $brand == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == ""){
 				$alert = "<span class='error'>Fiedls must be not empty</span>";
 				return $alert;
 			}else{
@@ -60,10 +59,10 @@
 				}
 			}
 		}
-		public function insert_slider($date,$files)
+		public function insert_slider($data,$files)
 		{
-			$sliderName = mysqli_real_escape_string($this->db->link, $date['sliderName']);
-			$type = mysqli_real_escape_string($this->db->link, $date['type']);
+			$sliderName = mysqli_real_escape_string($this->db->link, $data['sliderName']);
+			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			 //mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
 			
 			// kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
@@ -310,13 +309,40 @@
 
 		public function getproduct_featheread()
 		{
-			$query = "SELECT * FROM tbl_product where type = '0' order by productId desc LIMIT 4 ";
+            $sp_tungtrang=8;
+             if(!isset($_GET['page']))
+            {
+                $page=1;
+            }
+            else
+            {
+                $page=$_GET['page'];
+            }
+            $tung_trang=($page-1)*$sp_tungtrang;
+			$query = "SELECT * FROM tbl_product where type = '1' order by productId desc LIMIT $tung_trang,$sp_tungtrang ";
 			$result = $this->db->select($query);
 			return $result;
 		}
 		public function getproduct_new()
 		{
-			$query = "SELECT * FROM tbl_product order by productId desc LIMIT 4 ";
+            $sp_tungtrang=8;
+             if(!isset($_GET['page']))
+            {
+                $page=1;
+            }
+            else
+            {
+                $page=$_GET['page'];
+            }
+            $tung_trang=($page-1)*$sp_tungtrang;
+			$query = "SELECT * FROM tbl_product order by productId desc LIMIT $tung_trang,$sp_tungtrang ";
+			$result = $this->db->select($query);
+			return $result;
+		}
+        public function get_all_product()
+		{
+           
+			$query = "SELECT * FROM tbl_product";
 			$result = $this->db->select($query);
 			return $result;
 		}
@@ -333,29 +359,37 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestDell()
+		public function allproduct($catId)
 		{
-			$query = "SELECT * FROM tbl_product where brandId = '10' order by productId desc limit 1";
-			$result = $this->db->select($query);
-			return $result;	
+			$sp_tungtrang=4;
+			if(!isset($_GET['page']))
+		   {
+			   $page=1;
+		   }
+		   else
+		   {
+			   $page=$_GET['page'];
+		   }
+		   $tung_trang=($page-1)*$sp_tungtrang;
+		   $query = "SELECT * FROM `tbl_product` WHERE tbl_product.catId='$catId' order by productId desc LIMIT $tung_trang,$sp_tungtrang ";
+		$result=$this->db->select($query);
+		return $result;
 		}
-		public function getLastestHuawei()
+		public function topBrand($brandId)
 		{
-			$query = "SELECT * FROM tbl_product where brandId = '8' order by productId desc limit 1";
-			$result = $this->db->select($query);
-			return $result;	
-		}
-		public function getLastestApple()
-		{
-			$query = "SELECT * FROM tbl_product where brandId = '7' order by productId desc limit 1";
-			$result = $this->db->select($query);
-			return $result;	
-		}
-		public function getLastestSamsum()
-		{
-			$query = "SELECT * FROM tbl_product where brandId = '6' order by productId desc limit 1";
-			$result = $this->db->select($query);
-			return $result;	
+			$sp_tungtrang=4;
+			if(!isset($_GET['page']))
+		   {
+			   $page=1;
+		   }
+		   else
+		   {
+			   $page=$_GET['page'];
+		   }
+		   $tung_trang=($page-1)*$sp_tungtrang;
+			$query="SELECT * FROM `tbl_product` WHERE brandId='$brandId' LIMIT $tung_trang,$sp_tungtrang";
+		$result=$this->db->select($query);
+		return $result;
 		}
 		public function get_compare($customer_id)
 		{
@@ -438,5 +472,18 @@
 					}
 			}
 		}
+		public function getproductbycat($catId)
+		{
+			$query = "SELECT COUNT(*) FROM tbl_product where catId='$catId'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function getproductbybrand($brandId)
+		{
+			$query = "SELECT COUNT(*) FROM tbl_product where brandId='$brandId'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		
 	}
  ?>

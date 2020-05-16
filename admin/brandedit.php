@@ -13,8 +13,8 @@
     // gọi class category
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // LẤY DỮ LIỆU TỪ PHƯƠNG THỨC Ở FORM POST
-        $brandName = $_POST['brandName'];
-        $updateBrand = $brand -> update_brand($brandName,$id); // hàm check catName khi submit lên
+       
+        $updateBrand = $brand -> update_brand($_POST,$id); // hàm check catName khi submit lên
     }
     
   ?>
@@ -41,6 +41,34 @@
                                 <input type="text" value="<?php echo $result['brandName']; ?>" name="brandName" placeholder="Sửa thương hiệu sản phẩm..." class="medium" />
                             </td>
                         </tr>
+                        <tr>
+                   
+                    <td>
+                        <select id="select" name="type">
+                            <option>Select Type</option>
+                            <?php 
+                            if ($result['topBrand'] ==0) {
+                             ?>
+                              
+                              <option selected value="0">Thương hiệu bình thường</option>
+                              <option value="1">Thương hiệu hàng đầu</option>
+                           
+                            
+                            <?php 
+                                }else{
+                                    
+                            ?>
+                               <option selected value="1">Thương hiệu hàng đầu</option>
+                            <option value="0">Thương hiệu bình thường</option>
+                            <?php 
+                        }
+                             ?>
+                             
+                        
+                        </select>
+                    </td>
+                </tr>
+
 						<tr> 
                             <td>
                                 <input type="submit" name="submit" Value="Edit" />

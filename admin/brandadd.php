@@ -7,8 +7,7 @@
     $brand = new brand(); 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // LẤY DỮ LIỆU TỪ PHƯƠNG THỨC Ở FORM POST
-        $brandName = $_POST['brandName'];
-        $insertBrand = $brand -> insert_brand($brandName); // hàm check catName khi submit lên
+        $insertBrand = $brand -> insert_brand($_POST); // hàm check catName khi submit lên
     }
   ?> 
         <div class="grid_10">
@@ -27,6 +26,17 @@
                                 <input type="text" name="brandName" placeholder="Làm ơn thêm thương hiệu sản phẩm..." class="medium" />
                             </td>
                         </tr>
+                         <tr>
+                    
+                    <td>
+                        <select id="select" name="type">
+                            <option>Chọn</option>
+                            <option value="1">Thương hiệu hàng đầu</option>
+                            <option value="0">Thương hiệu bình thường</option>
+                        </select>
+                    </td>
+                </tr>
+
 						<tr> 
                             <td>
                                 <input type="submit" name="submit" Value="Save" />

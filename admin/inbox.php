@@ -5,6 +5,7 @@
 	include_once ($filepath.'/../classes/cart.php');
 	include_once ($filepath.'/../helpers/format.php');
  ?>
+<?php  ?>
  <?php
     $ct = new cart();
     if(isset($_GET['shiftid'])){
@@ -86,7 +87,7 @@
 								 ?>
 								 
 								<?php 
-								}elseif($result['status']==2) {
+								}else if($result['status']==2) {
 
 								 ?>
 								<a href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price']; ?>&time=<?php echo $result['date_order'] ?>">Xóa đơn</a>

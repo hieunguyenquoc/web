@@ -19,13 +19,14 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function insert_brand($brandName){
-			$brandName = $this->fm->validation($brandName); //gọi ham validation để ktra có rỗng hay ko để ktra
+		public function insert_brand($data){
+			$brandName = $this->fm->validation($data['brandName']); //gọi ham validation để ktra có rỗng hay ko để ktra
 			$brandName = mysqli_real_escape_string($this->db->link, $brandName);
+			$topBrand=mysqli_real_escape_string($this->db->link, $data['type']);
 			 //mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
 			
-			if(empty($brandName)){
-				$alert = "<span class='error'>Brand must be not empty</span>";
+			if(empty($brandName)&&empty($$topBrand)){
+				$alert = "<span class='error'>Không được để trống</span>";
 				return $alert;
 			}else{
                 $query="select *from tbl_brand where brandName='$brandName'";			
@@ -37,7 +38,7 @@
                     
                 }
                 else{
-				$query = "INSERT INTO tbl_brand(brandName) VALUES('$brandName') ";
+				$query = "INSERT INTO tbl_brand(brandName,topBrand) VALUES('$brandName','$topBrand') ";
 				$result = $this->db->insert($query);
 				if($result){
 					$alert = "<span class='success'>Insert brand Successfully</span>";
@@ -60,16 +61,17 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function update_brand($brandName,$id)
+		public function update_brand($data,$id)
 		{
-			$brandName = $this->fm->validation($brandName); //gọi ham validation từ file Format để ktra
+			$brandName = $this->fm->validation($data['brandName']); //gọi ham validation từ file Format để ktra
 			$brandName = mysqli_real_escape_string($this->db->link, $brandName);
+			$topBrand = mysqli_real_escape_string($this->db->link, $data['type']);
 			$id = mysqli_real_escape_string($this->db->link, $id);
 			if(empty($brandName)){
 				$alert = "<span class='error'>Brand must be not empty</span>";
 				return $alert;
 			}else{
-				$query = "UPDATE tbl_brand SET brandName= '$brandName' WHERE brandId = '$id' ";
+				$query = "UPDATE tbl_brand SET brandName= '$brandName',topBrand='$topBrand' WHERE brandId = '$id' ";
 				$result = $this->db->update($query);
 				if($result){
 					$alert = "<span class='success'>Brand Update Successfully</span>";
@@ -93,6 +95,15 @@
 				return $alert;
 			}
 		}
+		public function show_topbrand()
+		{
+			$query = "SELECT * FROM tbl_brand where topBrand=1 order by brandId desc ";
+			$result = $this->db->select($query);
+			return $result;
+		}
+        
+        
+        
 		
 	}
  ?>

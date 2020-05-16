@@ -3,7 +3,7 @@
 <?php include '../classes/password.php'?>
 <?php if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
 {
-$pass=new pass();
+$pass=new password();
 $newpass=$pass->updatePass($_POST);
 }?>
 <div class="grid_10">

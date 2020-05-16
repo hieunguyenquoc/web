@@ -51,9 +51,12 @@ if(!isset($_GET['newsID']) || $_GET['newsID'] == NULL){
 					
 					<td><?php 
 						if($result['newsType']==0){
-							echo 'Hot';
-						}else{
-							echo 'Bình thường';
+							echo 'Tin thường';
+						}else if($result['newsType']==1){
+							echo 'Tin mới';
+						}
+						else {
+							echo 'Tin hot';
 						}
 
 					?></td>

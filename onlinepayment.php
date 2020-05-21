@@ -1,186 +1,100 @@
+<?php
+include 'inc/header.php';
+// include 'inc/slider.php';
+?>
 <?php 
-	include 'inc/header.php';
-	// include 'inc/slider.php';
+	$login_check = Session::get('customer_login');
+	  if ($login_check==false) {
+	  	header('Location:login.php');
+	  }
  ?>
-<?php 
-	if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
-       $customer_id = Session::get('customer_id');
-       $insertOrder = $ct->insertOrder($customer_id);
-       $delCart = $ct->del_all_data_cart();
-       header('Location:success.php');
-    }
- ?>
- 
-
-<form action="" method="POST">
- <div class="main">
-    <div class="content">
-    	<div class="section group">
-    		<div class="heading">
-    		     <h3>Thanh toán offline</h3>
-    		</div>
-    		<div class="clear"></div>
-    		<div class="box_left">
-    			<div class="cartpage">
-			    	<h2>Giỏ hàng</h2>
-			    	<?php 
-			    	if (isset($update_quantity_Cart)) {
-			    		echo $update_quantity_Cart;
-			    	}
-			    	 ?>
-			    	<?php 
-			    	if (isset($delcart)) {
-			    		echo $delcart;
-			    	}
-			    	 ?>
-			    	 <?php
-			    	 if(isset($delcart)){
-			    	 	echo $delcart;
-			    	 }
-			    	?>
-						<table class="tblone">
-							<tr>
-								<th width="5%">Stt</th>
-								<th width="15%">Tên sản phẩm</th>
-								<th width="15%">Giá</th>
-								<th width="25%">Số lượng</th>
-								<th width="20%">Tổng giá</th>
-								
-							</tr>
-							<?php 
-							$get_product_cart = $ct->get_product_cart();
-							if($get_product_cart){
-								$subtotal = 0;
-								$qty = 0;
-								$i=0;
-								while ($result = $get_product_cart->fetch_assoc()) {
-									$i++;
-								
-							 ?>
-							<tr>
-								<td><?php echo $i; ?></td>
-								<td><?php echo $result['productName'] ?></td>
-								
-								<td><?php echo $result['price'].' VND' ?></td>
-								<td>
-									<?php echo $result['quantity'] ?>
-								</td>
-								<td>
-									<?php 
-									$total = $result['price'] * $result['quantity'];
-									echo $total.' VND';
-									 ?>
-								</td>
-								
-							</tr>
-							<?php 
-
-							$subtotal += $total;
-							$qty = $qty + $result['quantity'];
-								}
-							}
-							 ?>
-	
-						</table>
-						<?php
-							$check_cart = $ct->check_cart();
-							if ($check_cart) {
-
-							 ?>
-						<table style="float:right;text-align:left;" width="40%">
-							<tr>
-								<th>Tổng giá : </th>
-								<td>
-								<?php echo $subtotal.' VND';
-
-									  Session::set('sum',$subtotal);
-									  Session::set('qty',$qty);
-								?>
-								</td>
-							</tr>
-							<tr>
-								<th>Thuế : </th>
-								<td>10% (<?php echo $vat = $subtotal * 0.1. ' VND';?>)</td>
-							</tr>
-							<tr>
-								<th>Tổng cộng :</th>
-								<td><?php 
-								$vat = $subtotal * 0.1;
-								$grandTotal = $subtotal + $vat;
-								echo $grandTotal.' VND';
-								 ?> </td>
-							</tr>
-					   </table>
-					   <?php 
-						}else {
-							echo 'Your cart is Empty ! Please Shopping now';
-						}
-					    ?>
-					</div>
+<form action="" method="Get">
+	<div class="main">
+		<div class="content">
+			<div class="section group">
+				<div class="heading">
+					<h3>Thanh toán online</h3>
 					
+					<?php if((isset($_GET['cardnumber'])&&$_GET['cardnumber']=='')||(isset($_GET['name'])&&$_GET['name']=='')||(isset($_GET['date'])&&$_GET['date']=='')||(isset($_GET['code'])&&$_GET['code']=='')||(isset($_GET['bank'])&&$_GET['bank']=='null')||(isset($_GET['pass'])&&$_GET['pass']==''))
+					{
+						echo '<span style="text-align: center;" class="error">Không được để trống</span>';
+					}
+					?>
+					
+					<div class="onlinepayment">
+						
+					<form>
 
-    		</div>
-    		<div class="box_right">
-    			<table class="tblone">
-		    		<?php 
-		    		$id = Session::get('customer_id');
-		    		$get_customers = $cs->show_customers($id);
-		    		if ($get_customers) {
-		    			while ($result = $get_customers->fetch_assoc()) {
-		    			
-		    		 ?>
-		    		<tr>
-		    			<td>Tên</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['name']; ?></td>
-		    		</tr>
-		    		<tr>
-		    			<td>Thành Phố</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['city']; ?></td>
-		    		</tr>
-		    		<tr>
-		    			<td>Số điện thoại</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['phone']; ?></td>
-		    		</tr>
-		    		<!-- <tr>
-		    			<td>Country</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['country']; ?></td>
-		    		</tr> -->
-		    		<tr>
-		    			<td>Mã bưu điện</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['zipcode']; ?></td>
-		    		</tr>
-		    		<tr>
-		    			<td>Email</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['email']; ?></td>
-		    		</tr>
-		    		<tr>
-		    			<td>Địa chỉ</td>
-		    			<td>:</td>
-		    			<td><?php echo $result['address']; ?></td>
-		    		</tr>
-		            <tr>
-		                <td colspan="3"><a href="editprofile.php">Cập nhật thông tin</a></td>
-		               
-		            </tr>
-		    		
-		    		<?php 
-		    		}
-		    		}
-		    		 ?>
-		    	</table>	
+							Thanh toán bằng thẻ quốc tế Visa,Master,JBC <span><a href="?Card=QT" class="luachon">Chọn</a></span><br>
+							<?php if(isset($_GET['Card'])&&$_GET['Card']=='QT') 
+							echo'<br><div class="Card">
+							<form action="" method="">
+								
+								Nhập thẻ thanh toán<br><br>
 
-    		</div>
- 		</div>
- 	</div>
- 	<center style="padding-bottom: 20px;"><a href="?orderid=order" class="a_order">Đặt hàng ngay</a></center>
- </div>
+								Số thẻ:<br>
+								<input type="text" name="cardnumber" placeholder="VD:0000 0000 0000 0000"><br>
+								Tên in trên thẻ:<br>
+								<input type="text" name="name" placeholder="VD:NGUYEN VAN A"><br>
+								Ngày hết hạn:<br>
+								<input type="text" name="date" placeholder="mm/yyyy"><br>
+								Mã bảo mật:<br>
+								<input type="text" name="code" placeholder="VD:123"><br>
+
+							</form>
+</div>'
+?>
+
+<br><br>
+							Thẻ ATM nội địa/Internet Banking <span><a href="?Card=ND" class="luachon">Chọn</a></span><br>
+							<?php if(isset($_GET['Card'])&&$_GET['Card']=='ND') 
+							echo'<br><div class="Card">
+							<form action="" method="">
+								
+								Nhập thẻ thanh toán<br><br>
+
+								<select name="bank" id="">
+								<option value="null">Lựa chọn ngân hàng</option>         
+								<option value="ACB">Ngân hàng Á Châu</option>
+								<option value="DongABank">Ngân hàng Đông Á</option>
+								<option value="BacABank">Ngân hàng Bắc Á</option>
+								<option value="NamABank">Ngân hàng Nam Á</option>
+								<option value="VIB">Ngân hàng quốc tế</option>
+								<option value="SCB">Ngân hàng Sài Gòn</option>
+								<option value="VietABank">Ngân hàng Việt Á</option>
+								<option value="BIDV">Ngân hàng Đầu tư và Phát triển Việt Nam</option>
+								</select>
+								<br>
+								<br>
+								Tên tài khoản:<br>
+								<input type="text" name="name" placeholder="VD:NGUYEN VAN A"><br>
+								Mật khẩu:<br>
+								<input type="password" name="pass" placeholder="Mật khẩu"><br>
+								Mã xác nhận:<br>
+								<input type="text" name="code" placeholder="VD:123"><br>
+
+							</form>
+</div>'?>
+
+						</form>
+					</div>
+				</div>
+</select>
+
+
+			</div>
+		</div>
+		<a style="background:gray" href="payment.php">Quay lại</a>
+		<?php if(isset($_GET['Card'])){
+		echo'<center style="padding-bottom: 20px;"><input type="submit" value="Tiếp tục" class="a_order"></center>';}?>
+		<?php if((!empty($_GET['cardnumber'])&&!empty($_GET['name'])&&!empty($_GET['date'])&&!empty($_GET['code'])||(!empty($_GET['name'])&&!empty($_GET['pass'])&&!empty($_GET['code'])&&$_GET['bank']!='null')))
+		{
+			header('Location:offlinepayment.php?online=true');
+		}
+		?>
+	
+	</div>
 </form>
-<?php 
-	include 'inc/footer.php';
- ?>
+<?php
+include 'inc/footer.php';
+?>

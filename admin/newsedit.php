@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                                 </td>
                                 <td>
                                     <select id="select" name="newsType">
-                                        <option>Select Type</option>
+                                        <option>Lựa chọn loại tin tức</option>
                                         <?php
                                         if ($result['newsType'] == 0) {
                                         ?>
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                             <tr>
                                 <td></td>
                                 <td>
-                                    <input type="submit" name="submit" Value="Save" />
+                                    <input type="submit" name="submit" Value="Lưu" />
                                 </td>
                             </tr>
                     <?php }

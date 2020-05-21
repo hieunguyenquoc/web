@@ -2,24 +2,24 @@
 <?php include 'inc/sidebar.php';?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Update Site Title and Description</h2>
+        <h2>Cập nhập tên trang web và mô tả</h2>
         <div class="block sloginblock">               
          <form>
             <table class="form">					
                 <tr>
                     <td>
-                        <label>Website Title</label>
+                        <label>Tên trang web</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Website Title..."  name="title" class="medium" />
+                        <input type="text" placeholder="Điền tên website vào đây ..."  name="title" class="medium" />
                     </td>
                 </tr>
 				 <tr>
                     <td>
-                        <label>Website Slogan</label>
+                        <label>Slogan của website</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Website Slogan..." name="slogan" class="medium" />
+                        <input type="text" placeholder="Nhập slogan của website vào đây ..." name="slogan" class="medium" />
                     </td>
                 </tr>
 				 
@@ -28,7 +28,7 @@
                     <td>
                     </td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

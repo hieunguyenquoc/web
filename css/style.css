@@ -415,9 +415,49 @@ p.note{
 .header_bottom{margin-bottom:10px;}
 /**** Header Botttom Left ****/
 .header_bottom_left{
-	float:left;
-	width:50%;
-	padding-top:6px;
+	float: left;
+    width: 20%;
+    height: 312px;
+    padding-top: 15px;
+    margin-top: 15px;
+	border: 1px solid;
+	background-color: #4267b2;
+	color: #FFF;
+}
+.menu-category
+{
+	width: 100%;
+	height: 90%;
+    margin-top: 0px;
+	overflow-y: scroll;
+	
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+
+}
+::-webkit-scrollbar-thumb
+{
+	background-color:#544b9e;
+	border-radius: 5px;
+}
+.menu-category li
+{
+    border-bottom: 1px solid;
+    padding-left: 20px;
+    height: 10%;
+	padding-top: 5%;
+}
+.menu-category li a
+{
+color: #FFF;
+}
+.header_bottom_left h2
+{
+    border-bottom: 1px solid;
+    height: 10%;
+	text-align: center;
 }
 .header_bottom_img{
 	float:left;
@@ -520,7 +560,7 @@ p.note{
 }
 .header_bottom_right_images{
 	float:left;
-	width:49%;
+	width:55%;
 	margin-left:1%;
 	padding-top: 15px;
 }
@@ -2579,4 +2619,44 @@ h2.success_order
 {
     color:#4267b2;
 
+}
+.onlinepayment
+{
+	width: 500px;
+	border: 1px solid black;
+	margin: 20px 320px;
+    padding: 20px;
+}
+.luachon
+{
+	border: 1px solid #a9a9a9;
+	background-color: #f5f5f5;
+	color: #000;
+	font-size: 13px;
+}
+.Card
+{
+	border: 1px solid;
+	padding: 10px 40px;
+	
+}
+.flashnews
+{
+	
+    float: right;
+    margin-top: 15px;
+    width: 22.5%;
+    margin-left: 1%;
+    height: 328px;
+    border: 1px solid #fff;
+}
+.flashnews img
+{
+	padding-top: 0px;
+	height: 49%;
+	border: 1px solid #a5a5a5;
+	min-height: 49%;
+	min-width: 100%;
+	margin-bottom: 4px;
+	
 }

@@ -62,16 +62,16 @@ class category
 		$catName = mysqli_real_escape_string($this->db->link, $catName);
 		$id = mysqli_real_escape_string($this->db->link, $id);
 		if (empty($catName)) {
-			$alert = "<span class='error'>Category must be not empty</span>";
+			$alert = "<span class='error'>Danh mục không được để trống</span>";
 			return $alert;
 		} else {
 			$query = "UPDATE tbl_category SET catName= '$catName' WHERE catId = '$id' ";
 			$result = $this->db->update($query);
 			if ($result) {
-				$alert = "<span class='success'>Category Update Successfully</span>";
+				$alert = "<span class='success'>Cập nhật danh mục thành công</span>";
 				return $alert;
 			} else {
-				$alert = "<span class='error'>Update Category NOT Success</span>";
+				$alert = "<span class='error'>Cập nhật danh mục không thành công</span>";
 				return $alert;
 			}
 		}
@@ -81,10 +81,10 @@ class category
 		$query = "DELETE FROM tbl_category where catId = '$id' ";
 		$result = $this->db->delete($query);
 		if ($result) {
-			$alert = "<span class='success'>Category Deleted Successfully</span>";
+			$alert = "<span class='success'>Xóa danh mục thành công</span>";
 			return $alert;
 		} else {
-			$alert = "<span class='success'>Category Deleted Not Success</span>";
+			$alert = "<span class='success'>Xóa danh mục không thành công</span>";
 			return $alert;
 		}
 	}
@@ -102,7 +102,23 @@ class category
 	}
 	public function get_product_by_cat($id)
 	{
-		$query = "SELECT * FROM tbl_product where catId = '$id' order by catId desc LIMIT 8";
+		$sp_tungtrang=8;
+			if(!isset($_GET['page']))
+		   {
+			   $page=1;
+		   }
+		   else
+		   {
+			   $page=$_GET['page'];
+		   }
+		   $tung_trang=($page-1)*$sp_tungtrang;
+		$query = "SELECT * FROM tbl_product where catId = '$id' order by catId desc LIMIT $tung_trang,$sp_tungtrang";
+		$result = $this->db->select($query);
+		return $result;
+	}
+	public function select_product_by_cat($id)
+	{
+		$query = "SELECT COUNT(*) FROM tbl_product where catId = '$id'";
 		$result = $this->db->select($query);
 		return $result;
 	}

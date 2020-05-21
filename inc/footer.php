@@ -9,7 +9,7 @@
 						<li><a href="#">Dịch vụ</a></li>
 						<li><a href="#"><span>Tìm dịch vụ</span></a></li>
 						
-						<li><a href="#"><span>Liên hệ</span></a></li>
+						<li><a href="contact.php"><span>Liên hệ</span></a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -65,11 +65,11 @@
 							<li><span>0372105799</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Thêm dõi chúng tôi</h4>
+							<h4>Theo dõi chúng tôi</h4>
 					   		  <ul>
-							      <li class="facebook"><a href="#" target="_blank"> </a></li>
-							      <li class="twitter"><a href="#" target="_blank"> </a></li>
-							      <li class="googleplus"><a href="#" target="_blank"> </a></li>
+							      <li class="facebook"><a href="https://www.facebook.com/hieulm1609" target="_blank"> </a></li>
+							      <li class="twitter"><a href="https://twitter.com/Hieule1609" target="_blank"> </a></li>
+							      <li class="googleplus"><a href="https://www.google.com/intl/vi/gmail/about/#" target="_blank"> </a></li>
 							      <li class="contact"><a href="#" target="_blank"> </a></li>
 							      <div class="clear"></div>
 						     </ul>

@@ -43,7 +43,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 			if($product_code =="" || $productName == "" || $productQuantity == "" || $category == "" || $brand == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == ""){
-				$alert = "<span class='error'>Fiedls must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp, $uploaded_image);
@@ -51,10 +51,10 @@
 				$query = "INSERT INTO tbl_product(productName,product_code,product_remain,productQuantity,catId,brandId,product_desc,price,type,image) VALUES('$productName','$product_code','$productQuantity','$productQuantity','$category','$brand','$product_desc','$price','$type','$unique_image') ";
 				$result = $this->db->insert($query);
 				if($result){
-					$alert = "<span class='success'>Insert Product Successfully</span>";
+					$alert = "<span class='success'>Thêm sản phầm thành công</span>";
 					return $alert;
 				}else {
-					$alert = "<span class='error'>Insert Prodcut NOT Success</span>";
+					$alert = "<span class='error'>Thêm sản phẩm thất bại</span>";
 					return $alert;
 				}
 			}
@@ -80,20 +80,20 @@
 
 
 			if($sliderName=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không được để tr</span>";
 				return $alert; 
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 2048000) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Dung lương ảnh phải dưới 2MB !</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
 				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				    $alert = "<span class='success'>Bạn chỉ có thể đăng:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
@@ -101,10 +101,10 @@
 					$query = "INSERT INTO tbl_slider(sliderName,type,slider_image) VALUES('$sliderName','$type','$unique_image') ";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Slider Added Successfully</span>";
+						$alert = "<span class='success'>Thêm Slider thành công</span>";
 						return $alert;
 					}else {
-						$alert = "<span class='error'>Slider Added NOT Success</span>";
+						$alert = "<span class='error'Thêm slider thất bại</span>";
 						return $alert;
 					}
 				}
@@ -160,10 +160,10 @@
 			$query = "DELETE FROM tbl_slider where sliderId = '$id' ";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Slider Deleted Successfully</span>";
+				$alert = "<span class='success'>Xóa Slider thành công</span>";
 				return $alert;
 			}else {
-				$alert = "<span class='success'>Slider Deleted Not Success</span>";
+				$alert = "<span class='success'>Xóa Slider thất bại</span>";
 				return $alert;
 			}
 		}
@@ -173,7 +173,7 @@
 			
 			if($product_more_quantity == ""){
 
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống</span>";
 				return $alert; 
 			}else{
 					$qty_total = $product_more_quantity + $product_remain;
@@ -223,20 +223,20 @@
 
 
 			if($product_code == "" || $productName=="" || $productQuantity=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống</span>";
 				return $alert; 
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 20480) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Dung lượng ảnh phải dưới 2MB !</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
 				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				    $alert = "<span class='success'>Bạn chỉ có thể đăng:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
@@ -271,10 +271,10 @@
 				}
 				$result = $this->db->update($query);
 					if($result){
-						$alert = "<span class='success'>Sản phẩm Updated thành công</span>";
+						$alert = "<span class='success'>Sản phẩm được cập nhật thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Sản phẩm Updated không thành công</span>";
+						$alert = "<span class='error'>Sản phẩm được cập nhật thất bại</span>";
 						return $alert;
 					}
 				
@@ -286,10 +286,10 @@
 			$query = "DELETE FROM tbl_product where productId = '$id' ";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Product Deleted Successfully</span>";
+				$alert = "<span class='success'>Sản phẩm được xóa thành công</span>";
 				return $alert;
 			}else {
-				$alert = "<span class='success'>Product Deleted Not Success</span>";
+				$alert = "<span class='success'>Sản phẩm được xóa thất bại</span>";
 				return $alert;
 			}
 		}
@@ -464,10 +464,10 @@
 			$insert_wlist = $this->db->insert($query_insert);
 
 			if($insert_wlist){
-						$alert = "<span class='success'>Thêm sản phẩm vào wishlist thành công</span>";
+						$alert = "<span class='success'>Thêm sản phẩm vào yêu thích thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Thêm sản phẩm vào wishlist thất bại</span>";
+						$alert = "<span class='error'>Thêm sản phẩm vào yêu thích thất bại</span>";
 						return $alert;
 					}
 			}
@@ -481,6 +481,27 @@
 		public function getproductbybrand($brandId)
 		{
 			$query = "SELECT COUNT(*) FROM tbl_product where brandId='$brandId'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		
+		public function product_by_search($value){
+			$query = "select DISTINCT COUNT(*) from tbl_brand, tbl_product, tbl_category WHERE tbl_brand.brandId=tbl_product.brandId and tbl_category.catId = tbl_product.catId AND(tbl_product.productName like N'%$value%' OR tbl_brand.brandName like N'%$value%' OR tbl_category.catName like N'%$value%')";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function show_product_by_search($value){
+			$sp_tungtrang=16;
+			if(!isset($_GET['page']))
+		   {
+			   $page=1;
+		   }
+		   else
+		   {
+			   $page=$_GET['page'];
+		   }
+		   $tung_trang=($page-1)*$sp_tungtrang;
+			$query = "select DISTINCT *from tbl_brand, tbl_product, tbl_category WHERE tbl_brand.brandId=tbl_product.brandId and tbl_category.catId = tbl_product.catId AND(tbl_product.productName like N'%$value%' OR tbl_brand.brandName like N'%$value%' OR tbl_category.catName like N'%$value%' ) LIMIT $tung_trang,$sp_tungtrang";
 			$result = $this->db->select($query);
 			return $result;
 		}

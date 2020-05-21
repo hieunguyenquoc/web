@@ -40,7 +40,7 @@ $newpass=$pass->updatePass($_POST);
                     <td>
                     </td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

@@ -26,7 +26,7 @@
                         <label>Tiêu đề</label>
                     </td>
                     <td>
-                        <input type="text" name="sliderName" placeholder="Enter Slider Title..." class="medium" />
+                        <input type="text" name="sliderName" placeholder="Nhập tiêu đề slider..." class="medium" />
                     </td>
                 </tr>           
     
@@ -45,8 +45,8 @@
                     </td>
                     <td>
                         <select name="type">
-                            <option value="1">On</option>    
-                            <option value="0">Off</option> 
+                            <option value="1">Bật</option>    
+                            <option value="0">Tắt</option> 
                         </select>
                     </td>
                 </tr>
@@ -54,7 +54,7 @@
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" value="Save" />
+                        <input type="submit" name="submit" value="Lưu" />
                     </td>
                 </tr>
             </table>

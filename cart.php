@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Your Cart
+			    	<h2>Giỏ hàng của bạn
                 </h2>
                 <?php
                 if(isset($update_quantity_cart))
@@ -41,12 +41,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
                 ?>
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="25%">Số lượng </th>
+								<th width="20%">Tổng giá</th>
+								<th width="10%">Khác</th>
 							</tr>
                             <?php
                            
@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
 						<table style="float:right;text-align:left;" width="40%">
                             
 							<tr>
-								<th>Sub Total : </th>
+								<th>Tổng cộng : </th>
 								<td><?php 
                                    
                                     echo $subtotal;
@@ -98,7 +98,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['submit']))
 								<td>10%</td>
 							</tr>
 							<tr>
-								<th>Grand Total :</th>
+								<th>Tổng tiền :</th>
 								<td><?php 
                                     $vat=$subtotal*0.1;
                                     $gtotal=$subtotal+$vat;

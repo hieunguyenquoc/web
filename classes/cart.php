@@ -83,7 +83,7 @@
 				if ($result) {
 					header('Location:cart.php');
 				}else {
-					$msg = "<span class='erorr'> Product Quantity Update NOT Succesfully</span> ";
+					$msg = "<span class='erorr'> Cập nhật số lượng sản phẩm không thành công</span> ";
 					return $msg;
 				}
 			}else{
@@ -206,10 +206,10 @@
 
 			$result = $this->db->update($query);
 			if ($result) {
-				$msg = "<span class='success'> Update Order Succesfully</span> ";
+				$msg = "<span class='success'> Cập nhật đơn đặt thành công</span> ";
 				return $msg;
 			}else {
-				$msg = "<span class='erorr'> Update Order NOT Succesfully</span> ";
+				$msg = "<span class='erorr'> Cập nhật đơn đặt không thành công</span> ";
 				return $msg;
 			}
 		}
@@ -223,10 +223,10 @@
 
 			$result = $this->db->update($query);
 			if ($result) {
-				$msg = "<span class='success'> DELETE Order Succesfully</span> ";
+				$msg = "<span class='success'> Xóa đơn đặt thành công</span> ";
 				return $msg;
 			}else {
-				$msg = "<span class='erorr'> DELETE Order NOT Succesfully</span> ";
+				$msg = "<span class='erorr'> Xóa đơn đặt không thành công</span> ";
 				return $msg;
 			}
 		}

@@ -16,7 +16,7 @@
     	<div class="section group">
     		<div class="content_top">
     		<div class="heading">
-    		<h3>Profile Customer</h3>
+    		<h3>Hồ sơ khách hàng</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -29,23 +29,23 @@
     			
     		 ?>
     		<tr>
-    			<td>Name</td>
+    			<td>Tên</td>
     			<td>:</td>
     			<td><?php echo $result['name']; ?></td>
     		</tr>
     		<tr>
-    			<td>City</td>
+    			<td>Thành phố</td>
     			<td>:</td>
     			<td><?php echo $result['city']; ?></td>
     		</tr>
     		<tr>
-    			<td>Phone</td>
+    			<td>Số điện thoại</td>
     			<td>:</td>
     			<td><?php echo $result['phone']; ?></td>
     		</tr>
     		
     		<tr>
-    			<td>Zipcode</td>
+    			<td>Mã bưu điện</td>
     			<td>:</td>
     			<td><?php echo $result['zipcode']; ?></td>
     		</tr>
@@ -55,7 +55,7 @@
     			<td><?php echo $result['email']; ?></td>
     		</tr>
     		<tr>
-    			<td>Address</td>
+    			<td>Địa chỉ</td>
     			<td>:</td>
     			<td><?php echo $result['address']; ?></td>
     		</tr>

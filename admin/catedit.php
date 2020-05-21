@@ -44,7 +44,7 @@
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Edit" />
+                                <input type="submit" name="submit" Value="Sửa" />
                             </td>
                         </tr>
                     </table>

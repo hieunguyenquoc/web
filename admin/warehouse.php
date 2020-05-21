@@ -24,7 +24,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Code</th>
+					<th>Code sản phẩm</th>
 					<th>Tên sản phẩm</th>
 				
 					<th>Số lượng ban đầu</th>

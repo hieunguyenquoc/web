@@ -46,15 +46,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 					<h2><?php echo $result_details['productName'];?></h2> 
 					<p><?php echo $fm->textShorten($result_details['product_desc'],150);?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo $result_details['price']." "."VND";?></span></p>
-						<p>Category: <span><?php echo $result_details['catName'];?></span></p>
-						<p>Brand:<span><?php echo $result_details['brandName'];?></span></p>
+						<p>Giá: <span><?php echo $result_details['price']." "."VND";?></span></p>
+						<p>Loại hàng: <span><?php echo $result_details['catName'];?></span></p>
+						<p>Thương hiệu:<span><?php echo $result_details['brandName'];?></span></p>
 					</div>
 				<div class="add-cart">
                     
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1"/>
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+						<input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
                        
 					</form>	
                     
@@ -105,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 			</div>
                     </div>
 			<div class="product-desc">
-			<h2>Product Details</h2>
+			<h2>Chi tiết sản phẩm</h2>
 			<?php echo $result_details['product_desc'];?>
 	    </div>
 				
@@ -116,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
                     
  		</div>
             <div class="rightsidebar span_3_of_1">
-					<h2>CATEGORIES</h2>
+					<h2>Loại hàng</h2>
                     <?php 
                     $getall_category=$cat->show_category_fontend();
                     if($getall_category)

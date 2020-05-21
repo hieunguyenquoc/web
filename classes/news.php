@@ -49,15 +49,22 @@ class news
         $result = $this->db->select($query);
         return $result;
     }
+    public function show_flashnews()
+    {
+        $query =
+            "SELECT * FROM tbl_news order by newsID desc limit 2";
+        $result = $this->db->select($query);
+        return $result;
+    }
     public function del_newsid($id)
     {
         $query = "DELETE FROM tbl_news where newsID = '$id' ";
         $result = $this->db->delete($query);
         if ($result) {
-            $alert = "<span class='success'>news Deleted Successfully</span>";
+            $alert = "<span class='success'>Xóa tin tức thành công</span>";
             return $alert;
         } else {
-            $alert = "<span class='success'>news Deleted Not Success</span>";
+            $alert = "<span class='success'>Xóa tin tức thất bại</span>";
             return $alert;
         }
     }
@@ -79,7 +86,7 @@ class news
         $img_size = $_FILES['newsImg']['size'];
         $img_temp = $_FILES['newsImg']['tmp_name'];
         if ($newsTitle == "" || $newsContent == "" || $type == "") {
-            $alert = "<span class='error'>Fiedls must be not empty</span>";
+            $alert = "<span class='error'>file không được trống</span>";
             return $alert;
         } else {
             if ($_FILES['newsImg']['error'] > 0) {
@@ -104,10 +111,10 @@ class news
         $query = "DELETE FROM tbl_news where newsID = '$id' ";
         $result = $this->db->delete($query);
         if ($result) {
-            $alert = "<span class='success'>news Deleted Successfully</span>";
+            $alert = "<span class='success'>Xóa tin tức thành công</span>";
             return $alert;
         } else {
-            $alert = "<span class='success'>news Deleted Not Success</span>";
+            $alert = "<span class='success'>Xóa tin tức thất bại</span>";
             return $alert;
         }
     }

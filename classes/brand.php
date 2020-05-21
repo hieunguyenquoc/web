@@ -41,10 +41,10 @@
 				$query = "INSERT INTO tbl_brand(brandName,topBrand) VALUES('$brandName','$topBrand') ";
 				$result = $this->db->insert($query);
 				if($result){
-					$alert = "<span class='success'>Insert brand Successfully</span>";
+					$alert = "<span class='success'>Thêm thương hiệu thành công</span>";
 					return $alert;
 				}else {
-					$alert = "<span class='error'>Insert brand NOT Success</span>";
+					$alert = "<span class='error'>Thêm thương hiệu không thành công</span>";
 					return $alert;
 				}}
 			}
@@ -68,16 +68,16 @@
 			$topBrand = mysqli_real_escape_string($this->db->link, $data['type']);
 			$id = mysqli_real_escape_string($this->db->link, $id);
 			if(empty($brandName)){
-				$alert = "<span class='error'>Brand must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống</span>";
 				return $alert;
 			}else{
 				$query = "UPDATE tbl_brand SET brandName= '$brandName',topBrand='$topBrand' WHERE brandId = '$id' ";
 				$result = $this->db->update($query);
 				if($result){
-					$alert = "<span class='success'>Brand Update Successfully</span>";
+					$alert = "<span class='success'>Cập nhật thương hiệu thành công</span>";
 					return $alert;
 				}else {
-					$alert = "<span class='error'>Update Brand NOT Success</span>";
+					$alert = "<span class='error'>Cập nhật thương hiệu không thành công</span>";
 					return $alert;
 				}
 			}
@@ -88,10 +88,10 @@
 			$query = "DELETE FROM tbl_brand where brandId = '$id' ";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Brand Deleted Successfully</span>";
+				$alert = "<span class='success'>Xóa thương hiệu thành công</span>";
 				return $alert;
 			}else {
-				$alert = "<span class='success'>Brand Deleted Not Success</span>";
+				$alert = "<span class='success'>Xóa thương hiệu thành công</span>";
 				return $alert;
 			}
 		}

@@ -50,6 +50,33 @@ if(!isset($_GET['catid']) || $_GET['catid'] == NULL){
 	
     </div>
  </div>
+ <div class="page">
+          <?php
+            $pbc=$cat->select_product_by_cat($id);
+            $pbc_count;
+            $pbc=$cat->select_product_by_cat($id);
+            if($pbc)
+            {
+                while($result=$pbc->fetch_assoc())
+                {
+                    $pbc_count=$result['COUNT(*)'];
+                }
+            }
+            if($pbc_count==0)
+            {
+                echo '';
+            }
+            else
+            {
+            $pbc_button=ceil($pbc_count/8);//ceil làm tròn
+            $i=1;
+            echo '<p>Trang</p>';
+            for($i=1;$i<=$pbc_button;$i++)
+            {
+                echo '<a href="productbycat.php?page='.$i.'&catid='.$id.'">'.$i.'</a>';
+            }}
+            ?>  
+        </div>
 <?php
 include "inc/footer.php";
 

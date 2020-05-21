@@ -17,7 +17,7 @@
     <div class="content">
     	<div class="section group">
     		<div class="heading">
-    		     <h3>Thanh toán offline</h3>
+    		     <h3>Thanh toán</h3>
     		</div>
     		<div class="clear"></div>
     		<div class="box_left">
@@ -113,7 +113,7 @@
 					   </table>
 					   <?php 
 						}else {
-							echo 'Your cart is Empty ! Please Shopping now';
+							echo 'Giỏ hàng của bạn hiện đang rỗng ! Hãy quay lại để mua sắm !';
 						}
 					    ?>
 					</div>
@@ -177,8 +177,15 @@
 
     		</div>
  		</div>
- 	</div>
- 	<center style="padding-bottom: 20px;"><a href="?orderid=order" class="a_order">Đặt hàng ngay</a></center>
+	 </div>
+	<?php if(isset($_GET['online'])&&$_GET['online']=='true') {
+	echo '<a style="background:gray" href="onlinepayment.php">Quay lại</a>';
+}
+	else
+	{
+		echo '<a style="background:gray" href="payment.php">Quay lại</a>';
+	}
+	?><center style="padding-bottom: 20px;"><a href="?orderid=order" class="a_order">Đặt hàng ngay</a></center>
  </div>
 </form>
 <?php 

@@ -2,7 +2,7 @@
 <?php include 'inc/sidebar.php';?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Update Social Media</h2>
+        <h2>Cập nhật các mạng xã hội</h2>
         <div class="block">               
          <form>
             <table class="form">					
@@ -44,7 +44,7 @@
 				 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

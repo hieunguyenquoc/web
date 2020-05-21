@@ -69,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Lưu" />
                     </td>
                 </tr>
             </table>

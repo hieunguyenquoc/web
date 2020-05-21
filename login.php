@@ -27,8 +27,8 @@
  <div class="main">
     <div class="content">
     	 <div class="login_panel">
-        	<h3>Existing Customers</h3>
-        	<p>Sign in with the form below.</p>
+        	<h3>Khách hàng đã có tài khoản</h3>
+        	<p>Hãy đăng nhập vào mẫu dưới đây.</p>
              <?php
             if(isset($login_Customer))
             {
@@ -39,12 +39,12 @@
                 	<input type="text" name="email" class="field" placeholder="Nhập Email...">
                     <input type="password" name="password" class="field" placeholder="Nhập mật khẩu...">
                  
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
-                    <div class="buttons"><div><input type="submit" class="grey" name="login" value="Sign In"></div></div>
+                 <p class="note">Nếu bạn quên mật khẩu hãy điền email và click  <a href="#">vào đây</a></p>
+                    <div class="buttons"><div><input type="submit" class="grey" name="login" value="Đăng nhập"></div></div>
                 </form>
                     </div>
     	<div class="register_account">
-    		<h3>Register New Account</h3>
+    		<h3>Đăng ký tài khoản mới</h3>
             <?php
             if(isset($insertcustommer))
             {
@@ -83,20 +83,20 @@
 		           <div>
                       
 		         <select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a Country</option>         
+							<option value="null">Lựa chọn quốc gia</option>         
 							<option value="Vn">Việt Nam</option>
 							
 		         </select>
 		          </div>
 				  
 				  <div>
-					<input type="text" name="zipcode" placeholder="Mã bưu chính...">
+					<input type="text" name="zipcode" placeholder="Mã bưu điện...">
 				</div>
 		    	</td>
 		    </tr> 
 		    </tbody></table> 
-		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Create Account"></div></div>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Tạo tài khoản"></div></div>
+		    <p class="terms">Bằng việc ấn vào nút 'Tạo tài khoản' bạn đã chấp nhận những <a href="#">Điều kiện &amp; Điều khoản</a>.</p>
 		    <div class="clear"></div>
 		    </form>
     	</div>  	

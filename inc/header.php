@@ -15,7 +15,6 @@ spl_autoload_register(function ($class) {
 $db = new Database();
 $fm = new Format();
 $ct = new cart();
-$us = new user();
 $cs = new customer();
 $cat = new category();
 $product = new product();
@@ -69,8 +68,8 @@ header("Cache-Control: max-age=2592000");
 			</div>
 			<div class="header_top_right">
 				<div class="search_box">
-					<form>
-						<input type="text" value="Tìm kiếm sản phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="Tìm kiếm">
+					<form action="search.php" method="get">
+						<input type="text" name="search" placeholder="Tìm kiếm sản phẩm"><input type="submit" value="Tìm kiếm">
 					</form>
 				</div>
 				<div class="shopping_cart">

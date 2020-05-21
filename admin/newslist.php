@@ -60,7 +60,7 @@ if(!isset($_GET['newsID']) || $_GET['newsID'] == NULL){
 						}
 
 					?></td>
-							<td><a href="newsedit.php?newsID=<?php echo $result['newsID'] ?>">Edit</a> || <a href="?newsID=<?php echo $result['newsID'] ?>">Delete</a></td>		
+							<td><a href="newsedit.php?newsID=<?php echo $result['newsID'] ?>">Sửa</a> || <a href="?newsID=<?php echo $result['newsID'] ?>">Xóa</a></td>		
 					<?php }}?>
 				</tr>
 			

@@ -45,7 +45,7 @@
                    
                     <td>
                         <select id="select" name="type">
-                            <option>Select Type</option>
+                            <option>Lựa chọn loại thương hiệu</option>
                             <?php 
                             if ($result['topBrand'] ==0) {
                              ?>
@@ -71,7 +71,7 @@
 
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Edit" />
+                                <input type="submit" name="submit" Value="Sửa" />
                             </td>
                         </tr>
                     </table>

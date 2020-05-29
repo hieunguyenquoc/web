@@ -22,7 +22,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>So sánh sản phẩm</h2>
+			    	<h2>Sản phẩm yêu thích</h2>
 			    	<?php
 			    	 if(isset($update_quantity_cart)){
 			    	 	echo $update_quantity_cart;

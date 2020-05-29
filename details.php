@@ -63,7 +63,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
 							echo '<span style="color:red; font-size:18px;">Sản phẩm đã được bạn thêm vào giỏ hàng</span>';
 						}
 					 ?>	 
-				</div>
+                </div>
+                <?php if(isset($insertCompare))
+                        {
+                            echo $insertCompare;
+                        }?>
+                        <?php if(isset($insertWishlist))
+                        {
+                            echo $insertWishlist;
+                        }?>
                     <div class="add-cart">
                         <div class="button_details">
 					<form action="" method="post">
@@ -79,10 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
                     {
                         echo '';
                     }?>
-                       <?php if(isset($insertCompare))
-                        {
-                            echo $insertCompare;
-                        }?>
+                       
 					</form>	
                         <form action="" method="post">
 						
@@ -97,10 +102,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
                     {
                         echo '';
                     }?>
-                       <?php if(isset($insertWishlist))
-                        {
-                            echo $insertWishlist;
-                        }?>
+                       
 					</form>	
 			</div>
                     </div>

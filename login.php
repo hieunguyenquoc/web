@@ -96,7 +96,7 @@
 		    </tr> 
 		    </tbody></table> 
 		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Tạo tài khoản"></div></div>
-		    <p class="terms">Bằng việc ấn vào nút 'Tạo tài khoản' bạn đã chấp nhận những <a href="#">Điều kiện &amp; Điều khoản</a>.</p>
+		    <p class="terms">Bằng việc ấn vào nút 'Tạo tài khoản' bạn đã chấp nhận những <a href="rules.php">Điều kiện &amp; Điều khoản</a>.</p>
 		    <div class="clear"></div>
 		    </form>
     	</div>  	

@@ -84,7 +84,7 @@
 
 					?></td>
 					
-					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Sửa</a> || <a href="?productid=<?php echo $result['productId'] ?>">Xóa</a></td>
+					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Sửa</a> || <a  onclick = "return confirm('Bạn chắc chắn muốn xóa ?')" href="?productid=<?php echo $result['productId'] ?>">Xóa</a></td>
 				</tr>
 				<?php
 							

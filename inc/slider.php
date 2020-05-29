@@ -11,7 +11,7 @@
                     {
                     ?>
 					<ul>
-				      <li id="<?php echo $result_allcat['catId']?>" onmouseover="menu<?php echo $result_allcat['catId']?>()" onmouseout="menus<?php echo $result_allcat['catId']?>()" ><a href="productbycat.php?catid=<?php echo $result_allcat['catId']?>">
+				      <li id="<?php echo $result_allcat['catId']?>" ><a href="productbycat.php?catid=<?php echo $result_allcat['catId']?>">
                           <?php echo $result_allcat['catName']; ?></a></li>
 				      
     				</ul>
@@ -52,7 +52,7 @@
 		</div>
 	  <div class="clear"></div>
   </div>	
-  <script type="text/javascript">
+  <script>
   <?php 
 		
 		$getall_category=$cat->show_category_fontend();
@@ -60,15 +60,15 @@
 		{while($result_allcat= $getall_category->fetch_assoc())
 		{
 		?>
-	  var div<?php echo $result_allcat['catId']?> = document.getElementById('<?php echo $result_allcat['catId']?>');
-	  function menu<?php echo $result_allcat['catId']?>()
-	  {
-		div<?php echo $result_allcat['catId']?>.style.background = "#544b9e";
-	  }
-	  function menus<?php echo $result_allcat['catId']?>()
-	  {
-		div<?php echo $result_allcat['catId']?>.style.background = "#4267b2";
-	  }
+	  $(document).ready(function(){
+		  $('#<?php echo $result_allcat['catId']?>').mouseover(function(){
+			$('#<?php echo $result_allcat['catId']?>').css('background','#544b9e');
+		  }).mouseout(function(){
+			$('#<?php echo $result_allcat['catId']?>').css('background','#4267b2');
+		  })
+
+})
 	 
 	  <?php }} ?>
   </script>
+ 

@@ -32,7 +32,7 @@ if($news)
 		
 		?>
 				
-					 <h2><a href="newsdetails.php?id=<?php echo $result_all['newsID']?>" ><?php echo $result_all['newsTitle'] ?></a></h2>
+					 <h2><a style="color:black;" href="newsdetails.php?id=<?php echo $result_all['newsID']?>" ><?php echo $result_all['newsTitle'] ?></a></h2>
 					
 				
 			

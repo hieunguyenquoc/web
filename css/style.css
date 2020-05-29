@@ -2660,3 +2660,74 @@ h2.success_order
 	margin-bottom: 4px;
 	
 }
+.aboutus
+{
+	font-family : Arial, sans-serif;
+}
+.aboutus h2
+{
+	font-size : 20px;
+	font-weight : bold;
+	font-family : Arial, sans-serif;
+}
+.aboutus p
+{
+	font-size : 16px;
+	font-family : Arial, sans-serif;
+}
+.aboutus span
+{
+	font-size : 14px;
+	font-weight : bold;
+	
+}
+
+.policy{
+	margin :0px;
+}
+.policy h4{
+	font-family : Arial, sans-serif;
+	font-size : 30px;
+	color: red;
+	text-align : center;
+}
+.policy p{
+	font-family : Arial, sans-serif;
+	font-size : 16px;
+	font-weight : bold;
+	
+}
+.policy p br{
+	font-family : Arial, sans-serif;
+	font-size : 12px;
+	
+}
+.policy h3{
+	text-indent : 30px;
+}
+
+.rules{
+	margin :0px;
+}
+.rules h4{
+	font-family : Arial, sans-serif;
+	font-size : 30px;
+	color: red;
+	text-align : center;
+	font-weight: bold;
+}
+.rules p{
+	font-family : Arial, sans-serif;
+	font-size : 16px;
+	font-weight : bold;
+	
+}
+.rules h3{
+	text-indent : 30px;
+	font-size : 16px;
+}
+.rules h6{
+	font-family : Arial, sans-serif;
+	font-size : 18px;
+	font-weight : bold;
+}

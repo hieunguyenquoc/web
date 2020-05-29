@@ -22,7 +22,7 @@ include "inc/header.php";
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
-						    	<span><label>E-MAIL</label></span>
+						    	<span><label>Email</label></span>
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
@@ -34,7 +34,7 @@ include "inc/header.php";
 						    	<span><textarea> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="SUBMIT"></span>
+						   		<span><input type="submit" value="Phản hồi"></span>
 						  </div>
 					    </form>
 				  </div>

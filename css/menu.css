@@ -42,7 +42,7 @@ ul.dc_mm-orange li a{
 	text-shadow:1px 1px 1px #000;
 	text-transform:uppercase;
 	font-family:'Doppio One', sans-serif;
-	border-left:2px groove #636363;
+	border-left:1px groove #544b9e;
 }
 ul.dc_mm-orange li a.dc-mega{
 	position:relative;
@@ -218,4 +218,8 @@ ul.dc_mm-orange li .sub-container.non-mega li a:hover{
 	ul.dc_mm-orange li a .dc-mega-icon {
 		display:none;
 	}	
+ }
+ #dc_mega-menu-orange li a
+ {
+	 padding: 20px 20px;
  }

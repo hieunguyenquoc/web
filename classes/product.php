@@ -127,7 +127,7 @@
 			$query = 
 			"SELECT tbl_product.*, tbl_warehouse.*
 
-			 FROM tbl_product INNER JOIN tbl_warehouse ON tbl_product.productId = tbl_warehouse.id_sanpham
+			 FROM tbl_product INNER JOIN tbl_warehouse ON tbl_product.productId = tbl_warehouse.productId
 								
 			 order by tbl_warehouse.sl_ngaynhap desc ";
 
@@ -185,7 +185,7 @@
 					WHERE productId = '$id'";
 					
 					}
-					$query_warehouse = "INSERT INTO tbl_warehouse(id_sanpham,sl_nhap) VALUES('$id','$product_more_quantity') ";
+					$query_warehouse = "INSERT INTO tbl_warehouse(productId,sl_nhap) VALUES('$id','$product_more_quantity') ";
 					$result_insert = $this->db->insert($query_warehouse);
 					$result = $this->db->update($query);
 
@@ -447,7 +447,7 @@
 			$result_check_wlist = $this->db->select($check_wlist);
 
 			if($result_check_wlist){
-				$msg = "<span class='error'>Product Added to Wishlist</span>";
+				$msg = "<span class='error'>Thêm sản phẩm vào yêu thích thất bại</span>";
 				return $msg;
 			}else{
 

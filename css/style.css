@@ -571,7 +571,9 @@ color: #FFF;
 .content h2{ 
 	font-size:23px;
 	color:#6C6C6C;
-	font-family: 'Monda', sans-serif;
+	font-family: 'Arial', sans-serif;
+	text-align : center;
+	color : red;
 }
 .content_top{
 	padding:15px 20px;
@@ -776,7 +778,7 @@ color: #FFF;
 	display: block;
 	float:left;
 	margin: 0% 0 1% 1.6%;
-	border-right: 2px groove #555;
+	
 }
 .col_1_of_4:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
 .col_1_of_4:last-child {
@@ -796,7 +798,7 @@ color: #FFF;
 	margin-top: 0px;
 	letter-spacing: -1px;
 	text-transform:uppercase;
-	border-bottom:1px solid #474747;
+	
 	padding-bottom:0.5em;
 }
 .span_1_of_4  li a{
@@ -2679,7 +2681,18 @@ h2.success_order
 {
 	font-size : 14px;
 	font-weight : bold;
-	
+}
+
+.aboutus h4
+{
+	font-size : 20px;
+	font-weight : bold;
+	font-family : Arial, sans-serif;
+}
+.aboutus ul li
+{
+	font-family : Arial, sans-serif;
+	font-weight : bold;
 }
 
 .policy{
@@ -2704,6 +2717,30 @@ h2.success_order
 }
 .policy h3{
 	text-indent : 30px;
+}
+.help
+{
+	font-family : Arial, sans-serif;
+}
+.help h2
+{
+	font-size : 30px;
+	font-family : Arial, sans-serif;
+	text-align : center;
+}
+.help p
+{
+	font-size : 20px;
+	font-family : Arial, sans-serif;
+}
+.help ul li
+{
+	font-size : 20px;
+	font-family : Arial, sans-serif;
+	font-weight : bold;
+}
+help p br a:hover{
+	color : red;
 }
 
 .rules{

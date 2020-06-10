@@ -103,11 +103,11 @@ header("Cache-Control: max-age=2592000");
 			?> 
                  <div class="login">
                    
-                     
+               
 			<?php 
 			$login_check = Session::get('customer_login');
 			if ($login_check==false) {
-				echo '<a href="login.php"><img src="images/userlogin.PNG" style=" max-width: 20%;"><b>Đăng nhập</b></a></div>'; 
+				echo '<a href="login.php"><img src="images/userlogin.PNG" style=" max-width: 30%;"></a></div>'; 
 			}else {
 				echo '<a href="?customer_id='.Session::get('customer_id').' ">Đăng xuất</a></div>'; 
 			}

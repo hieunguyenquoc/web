@@ -159,10 +159,7 @@ input[type="number"] {
 	background: #70389C;
 }
 .login {
-  background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
-  border: 1px solid #cecece;
-  box-sizing: border-box;
-  color: #444;
+  color: white;
   display: block;
   float: left;
   font-size: 14px;
@@ -170,7 +167,7 @@ input[type="number"] {
   height: 38px;
   margin-left: 10px;
   text-align: center;
-  width: 144px;
+  width: 130px;
 }
 .login a {
 	color:#333;
@@ -2736,6 +2733,7 @@ h2.success_order
 .help ul li
 {
 	font-size : 20px;
+	font-family : arial;
 	font-family : Arial, sans-serif;
 	font-weight : bold;
 }

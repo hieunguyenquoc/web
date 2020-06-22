@@ -7,7 +7,7 @@
 						<ul>
 						<li><a href="aboutus.php">Về chúng tôi</a></li>
 						<li><a href="services.php">Dịch vụ</a></li>
-						<li><a href="contact.php"><span>Liên hệ</span></a></li>
+						<li><a href="contact.php">Liên hệ</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -15,7 +15,7 @@
 						<ul>
 						<li><a href="aboutus.php">Về chúng tôi</a></li>
 						<li><a href="services.php">Dịch vụ</a></li>
-						<li><a href="policy.php"><span>Chính sách</span></a></li>
+						<li><a href="policy.php">Chính sách</a></li>
 						
 						</ul>
 				</div>

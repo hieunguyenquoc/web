@@ -2603,6 +2603,28 @@ h2.success_order
     display: block;
     margin: 10px auto;
 }
+.help
+{
+	font-family : Arial, sans-serif;
+}
+.help h2
+{
+	font-size : 30px;
+	font-family : Arial, sans-serif;
+	text-align : center;
+}
+.help p
+{
+	font-size : 20px;
+	font-family : Arial, sans-serif;
+}
+.help ul li
+{
+	font-size : 20px;
+	font-family : arial;
+	font-family : Arial, sans-serif;
+	font-weight : bold;
+}
 .page
 {
     margin-top: 20px;

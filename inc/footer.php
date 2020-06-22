@@ -52,7 +52,7 @@
                                 echo '';
                             }
 	   ?>
-							<li><a href="faq.html">Giúp đỡ</a></li>
+							<li><a href="help.php">Giúp đỡ</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">

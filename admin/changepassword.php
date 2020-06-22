@@ -13,6 +13,7 @@ $newpass=$pass->updatePass($_POST);
         if(isset($newpass))
         {
             echo $newpass;
+
         } 
         ?>
         <div class="block">               

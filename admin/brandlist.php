@@ -3,7 +3,6 @@
 <?php include '../classes/brand.php';  ?>
 <?php
 
-    // gọi class category
     $brand = new brand();     
     if(!isset($_GET['delid']) || $_GET['delid'] == NULL){
         // echo "<script> window.location = 'catlist.php' </script>";
